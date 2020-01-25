@@ -1,0 +1,18 @@
+A device that senses when an epilepsy inducing light is around
+
+Solution - Usage of LDRs and Bluetooth along with a high resistance connected to LDR will set the range of LDR readings to low values.
+When an epilepsy light is around, spikes take place due to the sudden change in the light which then warns the epileptic person via Bluetooth.
+
+#define sw A0
+void setup() {
+      pinMode(sw,INPUT);
+      Serial.begin(9600);
+}
+
+void loop() {
+  int n=analogRead(sw);
+  if(n>27)
+    {
+          Serial.println("Epilepsy Warning");
+    }
+}
